@@ -20,15 +20,18 @@ brand/                  Kit logo complet (SVG, PNG, LinkedIn, réseaux sociaux)
 
 ## Charte graphique
 
-Bleu nuit `#0F2A47` · Or `#E9A23B` (`#F2B04A` sur fond sombre) · Crème `#F4F3EF` · Nuit `#0B1624` — titres en Poppins.
-Le kit logo complet est dans `brand/` (voir `brand/README.txt`). Pour LinkedIn : `brand/linkedin/`.
+Concept : « Du code qui avance » — un C ouvert et un chevron doré, comme une invite de commande.
+Navy `#0F2A47` · Gold `#E9A23B` (`#F2B04A` sur fond sombre) · Cream `#F4F3EF` · Night `#0B1624` · Gris `#5B6B7C` — police unique Poppins.
+Le doré reste un accent (10 % max, jamais en texte courant). Charte complète : `brand/codiva-brand-guidelines.pdf`.
+
+Le kit est dans `brand/` : logos (`logo/`), favicons, LinkedIn (profil, bannières, posts de lancement FR/EN dans `social/`), carte de visite (`print/`).
 
 ## À personnaliser
 
 1. **`assets/js/config.js`** : email pro, URL LinkedIn, et l'adresse du formulaire.
 2. **Formulaire de contact** : créez un formulaire gratuit sur [formspree.io](https://formspree.io), puis collez son URL dans `formEndpoint`. Tant qu'il est vide, le formulaire ouvre la messagerie du visiteur avec le message pré-rempli.
 3. **`mentions-legales.html`** : remplacez les `[À COMPLÉTER]` (SIREN, SIRET, adresse).
-4. **Photo** : ajoutez `assets/photo.jpg` et remplacez l’icône Codiva dans la section « À propos ».
+4. **Photo (optionnelle)** : ajoutez `assets/photo.jpg` et décommentez la ligne `about-photo` dans la section « À propos ».
 5. **Projets** : un modèle de carte projet est en commentaire dans la section `#projects`.
 6. **Compétences** : ajustez les listes de la section `#stack`.
 
