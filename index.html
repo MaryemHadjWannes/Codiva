@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codiva — Maryem Hadj Wannes · Développeuse Fullstack & Blockchain</title>
+  <meta name="description" content="Codiva développe des applications web, des logiciels et des solutions blockchain, de l'analyse du besoin jusqu'à la mise en ligne. Maryem Hadj Wannes, développeuse fullstack freelance.">
+  <meta name="author" content="Maryem Hadj Wannes">
+
+  <!-- Open Graph (aperçu LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Codiva — Applications web, logiciels & blockchain">
+  <meta property="og:description" content="De l'analyse du besoin jusqu'à la mise en ligne. Maryem Hadj Wannes, développeuse fullstack freelance.">
+  <meta property="og:locale" content="fr_FR">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Codiva">
+        <span class="logo-mark">&lt;/&gt;</span> Codiva
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#process" data-i18n="nav.process">Méthode</a>
+        <a href="#stack" data-i18n="nav.stack">Compétences</a>
+        <a href="#projects" data-i18n="nav.projects">Projets</a>
+        <a href="#about" data-i18n="nav.about">À propos</a>
+        <a href="#contact" class="btn btn-small" data-i18n="nav.contact">Me contacter</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Changer de thème">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="badge"><span class="dot"></span> <span data-i18n="hero.badge">Disponible pour de nouveaux projets</span></p>
+          <h1>
+            <span data-i18n="hero.title1">Votre idée,</span><br>
+            <span class="gradient-text" data-i18n="hero.title2">du besoin à la mise en ligne.</span>
+          </h1>
+          <p class="lead" data-i18n="hero.lead">
+            Je suis Maryem Hadj Wannes, développeuse fullstack freelance. Avec Codiva, je conçois et développe des applications web, des logiciels sur mesure et des solutions blockchain.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn" data-i18n="hero.cta1">Parlons de votre projet</a>
+            <a href="#services" class="btn btn-ghost" data-i18n="hero.cta2">Voir mes services</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-card-bar"><i></i><i></i><i></i><span>codiva.js</span></div>
+<pre><code><span class="k">const</span> <span class="v">projet</span> = <span class="k">await</span> codiva.<span class="f">build</span>({
+  besoin:   <span class="s">"votre idée"</span>,
+  stack:    [<span class="s">"React"</span>, <span class="s">"Node"</span>, <span class="s">"Solidity"</span>],
+  qualité:  <span class="s">"production-ready"</span>,
+});
+
+projet.<span class="f">deploy</span>(); <span class="c">// 🚀 en ligne</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+        <h2 data-i18n="services.title">Ce que je peux faire pour vous</h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 5h18v14H3zM3 9h18M7 7h.01M10 7h.01"/></svg>
+            </div>
+            <h3 data-i18n="services.web.title">Applications web</h3>
+            <p data-i18n="services.web.text">Sites vitrines, plateformes SaaS, tableaux de bord, e-commerce : des applications rapides, responsives et pensées pour vos utilisateurs.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>
+            </div>
+            <h3 data-i18n="services.software.title">Logiciels sur mesure</h3>
+            <p data-i18n="services.software.text">Outils métier, API, automatisations et intégrations : des logiciels adaptés à votre façon de travailler, faciles à faire évoluer.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l8 4.5v9L12 20l-8-4.5v-9zM12 11l8-4.5M12 11v9M12 11L4 6.5"/></svg>
+            </div>
+            <h3 data-i18n="services.blockchain.title">Solutions blockchain</h3>
+            <p data-i18n="services.blockchain.text">Smart contracts, dApps, tokens et intégration Web3 : des solutions décentralisées sécurisées, du prototype à la production.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section-alt" id="process">
+      <div class="container">
+        <p class="eyebrow" data-i18n="process.eyebrow">Méthode</p>
+        <h2 data-i18n="process.title">Un accompagnement de A à Z</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3 data-i18n="process.s1.title">Analyse du besoin</h3>
+            <p data-i18n="process.s1.text">On échange sur vos objectifs, vos utilisateurs et vos contraintes. Vous recevez un devis clair et gratuit.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3 data-i18n="process.s2.title">Conception</h3>
+            <p data-i18n="process.s2.text">Architecture technique, maquettes et choix des technologies adaptées à votre projet et à votre budget.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3 data-i18n="process.s3.title">Développement</h3>
+            <p data-i18n="process.s3.text">Développement itératif avec des points réguliers : vous suivez l'avancement et validez chaque étape.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">04</span>
+            <h3 data-i18n="process.s4.title">Mise en ligne & suivi</h3>
+            <p data-i18n="process.s4.text">Tests, déploiement, mise en production et maintenance pour que votre solution reste fiable dans le temps.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section class="section" id="stack">
+      <div class="container">
+        <p class="eyebrow" data-i18n="stack.eyebrow">Compétences</p>
+        <h2 data-i18n="stack.title">Mon stack technique</h2>
+        <!-- Ajustez librement ces listes selon vos vraies compétences -->
+        <div class="grid grid-4">
+          <div class="stack-group">
+            <h3>Frontend</h3>
+            <ul class="tags">
+              <li>JavaScript / TypeScript</li><li>React</li><li>Next.js</li><li>HTML / CSS</li><li>Tailwind</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3>Backend</h3>
+            <ul class="tags">
+              <li>Node.js</li><li>Express / NestJS</li><li>REST & GraphQL</li><li>Python</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3>Blockchain</h3>
+            <ul class="tags">
+              <li>Solidity</li><li>Ethereum / EVM</li><li>Hardhat</li><li>ethers.js</li><li>Web3</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 data-i18n="stack.tools">Données & outils</h3>
+            <ul class="tags">
+              <li>PostgreSQL</li><li>MongoDB</li><li>Docker</li><li>Git / GitHub</li><li>CI/CD</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <p class="eyebrow" data-i18n="projects.eyebrow">Projets</p>
+        <h2 data-i18n="projects.title">Réalisations</h2>
+        <!--
+          Pour ajouter un projet, dupliquez ce bloc dans .grid :
+          <article class="card project">
+            <h3>Nom du projet</h3>
+            <p>Description courte : problème, solution, résultat.</p>
+            <ul class="tags"><li>React</li><li>Node.js</li></ul>
+            <div class="project-links"><a href="https://...">Démo</a><a href="https://github.com/...">Code</a></div>
+          </article>
+        -->
+        <div class="launch-card">
+          <div>
+            <h3 data-i18n="projects.launch.title">Codiva démarre 🚀</h3>
+            <p data-i18n="projects.launch.text">Les premières réalisations clients arrivent bientôt. Votre projet pourrait être le premier : profitez d'une attention 100 % dédiée et d'un suivi au plus près.</p>
+          </div>
+          <div class="launch-actions">
+            <a href="#contact" class="btn" data-i18n="projects.launch.cta">Démarrer un projet</a>
+            <a href="https://github.com/MaryemHadjWannes" class="btn btn-ghost" target="_blank" rel="noopener" data-i18n="projects.launch.github">Voir mon GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about-avatar" aria-hidden="true">
+          <!-- Remplacez par une photo : <img src="assets/photo.jpg" alt="Maryem Hadj Wannes"> -->
+          <span>MHW</span>
+        </div>
+        <div>
+          <p class="eyebrow" data-i18n="about.eyebrow">À propos</p>
+          <h2>Maryem Hadj Wannes</h2>
+          <p class="role" data-i18n="about.role">Développeuse Fullstack & Blockchain · Fondatrice de Codiva</p>
+          <p data-i18n="about.p1">Passionnée par le développement, j'ai créé Codiva pour accompagner entreprises, startups et porteurs de projets dans la réalisation de leurs idées numériques.</p>
+          <p data-i18n="about.p2">Mon approche : comprendre votre besoin avant d'écrire la moindre ligne de code, livrer un travail propre et documenté, et rester disponible après la mise en ligne.</p>
+          <ul class="values">
+            <li data-i18n="about.v1">✔ Interlocutrice unique, du début à la fin</li>
+            <li data-i18n="about.v2">✔ Code propre, testé et documenté</li>
+            <li data-i18n="about.v3">✔ Communication transparente et délais respectés</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact">
+      <div class="container contact">
+        <div>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 data-i18n="contact.title">Un projet en tête ?</h2>
+          <p data-i18n="contact.text">Décrivez-moi votre besoin en quelques lignes. Je vous réponds sous 48 h avec une première estimation, gratuitement et sans engagement.</p>
+          <ul class="contact-links">
+            <li><a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" id="link-linkedin">LinkedIn</a></li>
+            <li><a href="https://github.com/MaryemHadjWannes" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="#" id="link-email" data-i18n="contact.email">Email</a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="contact-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="name" data-i18n="form.name">Nom *</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email" data-i18n="form.email">Email *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="type" data-i18n="form.type">Type de projet</label>
+              <select id="type" name="type">
+                <option value="Application web" data-i18n="form.type.web">Application web</option>
+                <option value="Logiciel sur mesure" data-i18n="form.type.software">Logiciel sur mesure</option>
+                <option value="Blockchain" data-i18n="form.type.blockchain">Solution blockchain</option>
+                <option value="Autre" data-i18n="form.type.other">Autre</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="budget" data-i18n="form.budget">Budget estimé</label>
+              <select id="budget" name="budget">
+                <option value="Non défini" data-i18n="form.budget.unknown">Je ne sais pas encore</option>
+                <option value="< 1 000 €">&lt; 1 000 €</option>
+                <option value="1 000 – 5 000 €">1 000 – 5 000 €</option>
+                <option value="5 000 – 15 000 €">5 000 – 15 000 €</option>
+                <option value="> 15 000 €">&gt; 15 000 €</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message" data-i18n="form.message">Votre projet *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <!-- anti-spam : champ invisible -->
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="btn btn-block" data-i18n="form.submit">Envoyer ma demande</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Codiva — Maryem Hadj Wannes EI</p>
+      <a href="mentions-legales.html" data-i18n="footer.legal">Mentions légales</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
