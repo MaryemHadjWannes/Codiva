@@ -14,8 +14,14 @@ mentions-legales.html   Mentions légales (obligatoires pour une EI)
 assets/css/style.css    Styles
 assets/js/config.js     ← Vos infos : email, LinkedIn, formulaire
 assets/js/main.js       Traductions, thème, menu, formulaire
-assets/favicon.svg      Icône
+assets/                 Favicons, icônes et image de partage (og-image.png)
+brand/                  Kit logo complet (SVG, PNG, LinkedIn, réseaux sociaux)
 ```
+
+## Charte graphique
+
+Bleu nuit `#0F2A47` · Or `#E9A23B` (`#F2B04A` sur fond sombre) · Crème `#F4F3EF` · Nuit `#0B1624` — titres en Poppins.
+Le kit logo complet est dans `brand/` (voir `brand/README.txt`). Pour LinkedIn : `brand/linkedin/`.
 
 ## À personnaliser
 
