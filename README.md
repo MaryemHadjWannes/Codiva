@@ -28,7 +28,7 @@ Le kit logo complet est dans `brand/` (voir `brand/README.txt`). Pour LinkedIn :
 1. **`assets/js/config.js`** : email pro, URL LinkedIn, et l'adresse du formulaire.
 2. **Formulaire de contact** : créez un formulaire gratuit sur [formspree.io](https://formspree.io), puis collez son URL dans `formEndpoint`. Tant qu'il est vide, le formulaire ouvre la messagerie du visiteur avec le message pré-rempli.
 3. **`mentions-legales.html`** : remplacez les `[À COMPLÉTER]` (SIREN, SIRET, adresse).
-4. **Photo** : ajoutez `assets/photo.jpg` et remplacez le bloc `MHW` dans la section « À propos ».
+4. **Photo** : ajoutez `assets/photo.jpg` et remplacez l’icône Codiva dans la section « À propos ».
 5. **Projets** : un modèle de carte projet est en commentaire dans la section `#projects`.
 6. **Compétences** : ajustez les listes de la section `#stack`.
 
