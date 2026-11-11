@@ -1,15 +1,14 @@
-# Validation de la migration
+# Validation de la version Codiva
 
-Mesures locales le 11 novembre 2026, sur l’export de production Next.js servi par `scripts/preview.mjs` avec le chemin GitHub Pages `/Codiva/`.
+Vérifications locales le 11 novembre 2026 sur l’export de production Next.js, sous le chemin GitHub Pages `/Codiva/`.
 
+- L’anglais est principal à `/` ; le français est à `/fr/`.
 - Build de production et TypeScript strict : réussis.
-- Tests automatisés : métadonnées et langues des huit pages indexables, sitemap/robots, données structurées JSON, identité LinkedIn, mentions légales et libellés des formulaires.
-- Chromium / Playwright : navigation FR→EN, préférence de thème après rechargement, menu mobile, validation des champs requis et email invalide, pages de services, page légale, absence de débordement mobile, absence d’erreurs JavaScript et de ressources HTTP en échec.
-- `npm audit --omit=dev` : aucune vulnérabilité signalée au moment de la vérification.
-- Lighthouse mobile local : performance **100**, accessibilité **100**, bonnes pratiques **100**, SEO **100**. LCP **1,1 s**, CLS **0**, TBT **40 ms**.
+- 13 tests : canonical et hreflang réciproques, `x-default` anglais, sitemap/robots, données structurées Codiva, identifiants RNE, FAQ et formulaire rendus dans le HTML, liens de services et anciennes adresses.
+- Chromium / Playwright : changement de langue, liens des services, FAQ, thème après rechargement, menu mobile, absence de débordement, validation du formulaire, anciennes URL et SIRET sur la page légale. Aucune ressource en échec ni erreur JavaScript.
+- Contrôle de l’export et des bundles navigateur : absence du nom personnel affiché et de l’adresse du document ; aucun PDF dans l’export public. Le nom du compte GitHub reste nécessaire dans l’adresse d’hébergement existante.
+- Lighthouse mobile local : performance **99**, accessibilité **100**, bonnes pratiques **100**, SEO **100**. LCP **1,1 s**, CLS **0**, TBT **120 ms**.
 
-Audit lancé avec Lighthouse CLI, Chromium headless et l’export de production. Ces mesures de laboratoire dépendent de la machine et du réseau ; elles ne sont pas un score PageSpeed public ni des Core Web Vitals réels. Les avertissements de compression/cache du serveur d’aperçu doivent être réévalués sur l’hébergement public.
+Mesures de laboratoire avec Lighthouse CLI et Chromium headless. Ces résultats varient selon la machine et ne constituent ni des données CrUX réelles ni une garantie de positionnement Google. Compression et cache sont à vérifier sur l’hébergement public.
 
-Aucun déploiement, vérification de propriété Search Console, audit de compte Semrush ou envoi réel du formulaire n’a été effectué. Le domaine public final et les informations légales restent à confirmer.
-
-Le build et les 11 tests ont également réussi avec `NEXT_PUBLIC_SITE_URL=https://codiva.fr` : assets à la racine, URL canoniques et balise Search Console vérifiés avec un jeton de test. L’export final utilise de nouveau l’URL GitHub Pages par défaut, sans jeton de test.
+Aucune vérification de propriété Search Console, action dans Semrush ou soumission réelle du formulaire n’a été effectuée. La ville publique reste facultative et vide. Les informations légales d’une EI restent à faire valider (voir LEGAL-REVIEW.md).

@@ -1,35 +1,16 @@
-import { absolute, home, linkedin, type Lang } from "../lib/site";
+import { absolute, home, type Lang } from "../lib/site";
+import { organization } from "../lib/organization";
 export function StructuredData({ lang }: { lang: Lang }) {
   const data = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": absolute("/#organization"),
-        name: "Codiva",
-        legalName: "Maryem Hadj Wannes EI",
-        url: absolute("/"),
-        logo: absolute("/assets/icon-512.png"),
-        email: "contact@codiva.fr",
-        sameAs: [linkedin],
-        founder: { "@id": absolute("/#founder") },
-      },
-      {
-        "@type": "Person",
-        "@id": absolute("/#founder"),
-        name: "Maryem Hadj Wannes",
-        jobTitle:
-          lang === "fr"
-            ? "Développeuse full-stack freelance"
-            : "Freelance full-stack developer",
-        worksFor: { "@id": absolute("/#organization") },
-      },
+      organization,
       {
         "@type": "WebSite",
         "@id": absolute("/#website"),
         name: "Codiva",
         url: absolute("/"),
-        inLanguage: ["fr", "en"],
+        inLanguage: ["en", "fr"],
         publisher: { "@id": absolute("/#organization") },
       },
       {
@@ -39,7 +20,7 @@ export function StructuredData({ lang }: { lang: Lang }) {
         name:
           lang === "fr"
             ? "Codiva — Développement web, logiciels et blockchain"
-            : "Codiva — Web, software and blockchain development",
+            : "Codiva — Web development, custom software and blockchain",
         inLanguage: lang,
         isPartOf: { "@id": absolute("/#website") },
         about: { "@id": absolute("/#organization") },

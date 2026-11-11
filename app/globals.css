@@ -1152,3 +1152,30 @@ p {
     transition: none !important;
   }
 }
+
+.hero-title {
+  font-size: clamp(2rem, 6.8vw, 5.4rem);
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+.hero-title .line2 {
+  white-space: normal;
+}
+.faq-list {
+  min-width: 0;
+}
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.faq-list details p {
+  margin: 16px 0 0;
+  color: var(--muted);
+}
+.business-location:empty {
+  display: none;
+}

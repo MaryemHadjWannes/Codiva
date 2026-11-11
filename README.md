@@ -1,6 +1,6 @@
 # Codiva — Next.js
 
-Site de Maryem Hadj Wannes, développeuse full-stack freelance. Next.js App Router, React et TypeScript strict. Le design navy / gold d’origine est conservé. Les pages sont prégénérées et exportées dans `out/` ; aucun serveur applicatif ni base de données n’est nécessaire en production.
+Site de Codiva, développement web, logiciels sur mesure et blockchain. Next.js App Router, React et TypeScript strict. Le design navy / gold d’origine est conservé. Les pages sont prégénérées et exportées dans `out/` ; aucun serveur applicatif ni base de données n’est nécessaire en production.
 
 ## Développement
 
@@ -24,8 +24,8 @@ npm start
 
 ## Pages et contenu
 
-- `/` : accueil français ; `/en/` : accueil anglais, tous deux rendus avant JavaScript.
-- `/services/developpement-web/`, `/services/logiciels-sur-mesure/`, `/services/blockchain/` et équivalents sous `/en/`.
+- `/` : accueil anglais ; `/fr/` : accueil français, tous deux rendus avant JavaScript.
+- `/services/web-development/`, `/services/custom-software/`, `/services/blockchain-development/` en anglais ; `/fr/services/developpement-web/`, `/fr/services/logiciels-sur-mesure/`, `/fr/services/blockchain/` en français.
 - `/mentions-legales/` : mentions et confidentialité en français, `noindex,follow`. L’ancienne URL `.html` redirige côté navigateur.
 - `/sitemap.xml` et `/robots.txt` : générés par Next.js.
 
@@ -37,6 +37,13 @@ Le formulaire prépare un email dans la messagerie du visiteur et ne prétend pa
 
 Le workflow GitHub Actions construit, teste et déploie **uniquement `out/`** sur GitHub Pages après un push sur la branche par défaut du dépôt (actuellement `claude/ei-freelance-website-form-9sfcx5`), ou un lancement manuel du workflow. Les autres branches et les pull requests construisent et testent sans déployer. Activer Settings → Pages → GitHub Actions. Aucun déploiement n’est effectué par la présente modification.
 
-Consulter [le guide SEO](docs/SEO.md) pour le domaine, Search Console, Bing, Semrush et les mesures PageSpeed. La configuration inclut canonical, hreflang FR/EN/x-default, Open Graph, Twitter Cards et données structurées Organization, Person, WebSite, WebPage, Service et BreadcrumbList.
+Consulter [le guide SEO](docs/SEO.md) pour le domaine, Search Console, Bing, Semrush et les mesures PageSpeed. La configuration inclut canonical, hreflang FR/EN/x-default, Open Graph, Twitter Cards et données structurées Organization, WebSite, WebPage, Service et BreadcrumbList.
 
-Avant publication : compléter les mentions légales (SIREN, SIRET, adresse, régime de TVA) et confirmer les informations d’hébergement. Aucun identifiant légal, avis client, prix ou résultat commercial n’est inventé.
+Les identifiants SIREN/SIRET et le code APE proviennent de l’attestation RNE fournie par le propriétaire. Le PDF et l’adresse personnelle ne sont pas publiés. Le site présente uniquement la marque Codiva. Les mentions légales d’une entreprise individuelle restent à faire valider : le retrait du nom personnel et l’absence d’adresse ne permettent pas de les considérer comme complètes. Aucun régime de TVA non confirmé n’est affiché.
+
+
+## Localisation publique
+
+Renseigner uniquement la ville que vous souhaitez rendre publique dans la variable GitHub Actions `NEXT_PUBLIC_BUSINESS_CITY` (Settings → Secrets and variables → Actions → Variables), puis reconstruire le site. En local, utiliser `.env.local`. Tant que cette valeur est vide, aucune localisation n’est affichée ni ajoutée aux données structurées. Ne pas y saisir une adresse personnelle. Voir `lib/business.ts` pour les identifiants publics de Codiva.
+
+L’anglais est la langue principale et la cible `x-default`. Les anciennes pages de services et `/en/` ont des pages de redirection HTML générées après le build. GitHub Pages ne permet pas d’ajouter des redirections HTTP personnalisées ; ces pages contiennent une URL canonique et ne figurent pas au sitemap.
