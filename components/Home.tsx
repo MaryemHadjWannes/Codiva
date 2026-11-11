@@ -1,6 +1,8 @@
 import { Controls } from "./Controls";
 import { ContactForm } from "./ContactForm";
-import { local, type Lang } from "../lib/site";
+import { local, servicePath, type Lang } from "../lib/site";
+import { business } from "../lib/business";
+import { Faq } from "./Faq";
 import { translations } from "../lib/translations";
 export function Home({ lang }: { lang: Lang }) {
   const t = translations[lang];
@@ -79,11 +81,18 @@ export function Home({ lang }: { lang: Lang }) {
               </g>
             </svg>
           </a>
-          <nav className="nav" id="nav" aria-label="Navigation principale">
+          <nav
+            className="nav"
+            id="nav"
+            aria-label={
+              lang === "fr" ? "Navigation principale" : "Main navigation"
+            }
+          >
             <a href="#services">{t["nav.services"]}</a>
             <a href="#approche">{t["nav.process"]}</a>
             <a href="#outils">{t["nav.stack"]}</a>
             <a href="#apropos">{t["nav.about"]}</a>
+            <a href="#faq">FAQ</a>
             <a href="#contact" className="nav-cta">
               {t["nav.contact"]}
             </a>
@@ -184,10 +193,7 @@ export function Home({ lang }: { lang: Lang }) {
                   <p className="service-items">{t["services.web.items"]}</p>
                   <a
                     className="link-arrow"
-                    href={local(
-                      (lang === "fr" ? "/services/" : "/en/services/") +
-                        "developpement-web/",
-                    )}
+                    href={servicePath("developpement-web", lang)}
                   >
                     {lang === "fr"
                       ? "Découvrir le service"
@@ -210,10 +216,7 @@ export function Home({ lang }: { lang: Lang }) {
                   </p>
                   <a
                     className="link-arrow"
-                    href={local(
-                      (lang === "fr" ? "/services/" : "/en/services/") +
-                        "logiciels-sur-mesure/",
-                    )}
+                    href={servicePath("logiciels-sur-mesure", lang)}
                   >
                     {lang === "fr"
                       ? "Découvrir le service"
@@ -236,10 +239,7 @@ export function Home({ lang }: { lang: Lang }) {
                   </p>
                   <a
                     className="link-arrow"
-                    href={local(
-                      (lang === "fr" ? "/services/" : "/en/services/") +
-                        "blockchain/",
-                    )}
+                    href={servicePath("blockchain", lang)}
                   >
                     {lang === "fr"
                       ? "Découvrir le service"
@@ -398,7 +398,7 @@ export function Home({ lang }: { lang: Lang }) {
                   </span>
                 </a>
                 <a
-                  href="https://github.com/MaryemHadjWannes"
+                  href="https://www.linkedin.com/company/codiva-fr/"
                   className="link-arrow"
                   target="_blank"
                   rel="noopener"
@@ -417,10 +417,10 @@ export function Home({ lang }: { lang: Lang }) {
               <h2>{t["about.title"]}</h2>
             </header>
             <div className="about">
-              <blockquote className="quote">{t["about.quote"]}</blockquote>
+              <p className="quote">{t["about.quote"]}</p>
               <div className="about-body">
                 <div>
-                  <p className="about-name">{"Maryem Hadj Wannes"}</p>
+                  <p className="about-name">Codiva</p>
                   <p className="about-role">{t["about.role"]}</p>
                   <p>{t["about.p1"]}</p>
                   <p>{t["about.p2"]}</p>
@@ -450,12 +450,19 @@ export function Home({ lang }: { lang: Lang }) {
           </div>
         </section>
 
+        <Faq lang={lang} />
         <section className="contact" id="contact">
           <div className="container contact-inner">
             <div className="contact-intro">
               <p className="index index-light">{"06"}</p>
               <h2>{t["contact.title"]}</h2>
               <p>{t["contact.text"]}</p>
+              <p className="business-location">
+                {business.city &&
+                  (lang === "fr"
+                    ? `Localisation : ${business.city}`
+                    : `Based in ${business.city}`)}
+              </p>
               <ul className="contact-links">
                 <li>
                   <a
@@ -474,15 +481,6 @@ export function Home({ lang }: { lang: Lang }) {
                     id="link-linkedin"
                   >
                     {"LinkedIn"}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/MaryemHadjWannes"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    {"GitHub"}
                   </a>
                 </li>
               </ul>
@@ -565,7 +563,9 @@ export function Home({ lang }: { lang: Lang }) {
           <p className="footer-legal">
             {"© "}
             <span>{new Date().getFullYear()}</span>
-            {" Maryem Hadj Wannes EI · "}
+            {" Codiva · SIRET "}
+            {business.siret}
+            {" · "}
             <a href={local("/mentions-legales/")}>{t["footer.legal"]}</a>
           </p>
         </div>

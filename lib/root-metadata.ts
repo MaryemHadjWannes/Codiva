@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 export const metadata: Metadata = {
-  authors: [{ name: "Maryem Hadj Wannes" }],
+  authors: [{ name: "Codiva" }],
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
     other: process.env.BING_SITE_VERIFICATION

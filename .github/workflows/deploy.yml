@@ -1,7 +1,7 @@
 name: Validate and deploy Next.js to GitHub Pages
 on:
   push:
-    branches: ['**']
+    branches: ["**"]
   pull_request:
   workflow_dispatch:
 permissions:
@@ -14,13 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || 'https://maryemhadjwannes.github.io/Codiva' }}
+      NEXT_PUBLIC_BUSINESS_CITY: ${{ vars.NEXT_PUBLIC_BUSINESS_CITY }}
       GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
       BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: "24"
           cache: npm
       - run: npm ci
       - run: npm run build

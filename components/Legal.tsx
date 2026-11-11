@@ -1,77 +1,65 @@
-import { local } from "../lib/site";
+import { home, local } from "../lib/site";
+import { business } from "../lib/business";
 export function Legal() {
   return (
     <main className="container legal">
-      <a href={local("/")}>← Retour à l’accueil</a>
-      <h1>{"Mentions légales"}</h1>
-
-      <h2>{"Éditeur du site"}</h2>
+      <a href={local(home("fr"))}>← Retour à l’accueil en français</a>
+      <h1>Informations légales et confidentialité</h1>
+      <h2>Codiva</h2>
       <p>
-        <strong>{"Maryem Hadj Wannes EI"}</strong>
-        {" — nom commercial : Codiva"}
+        Nom commercial : <strong>Codiva</strong>
         <br />
-        {"\n      Entreprise individuelle"}
+        Forme juridique : entrepreneur individuel
         <br />
-        {"\n      SIREN : [À COMPLÉTER] — SIRET : [À COMPLÉTER]"}
+        SIREN : {business.siren}
         <br />
-        {
-          "\n      Code APE : [À COMPLÉTER — ex. 6201Z Programmation informatique]"
-        }
+        SIRET : {business.siret}
         <br />
-        {"\n      Adresse : [À COMPLÉTER — adresse de domiciliation]"}
+        Code APE : {business.ape} — Programmation informatique
         <br />
-        {"\n      Email : "}
-        <a href="mailto:contact@codiva.fr" data-config="email">
-          {"contact@codiva.fr"}
-        </a>
-        <br />
-        {
-          "\n      TVA non applicable, art. 293 B du CGI (si micro-entreprise en franchise de TVA)\n    "
-        }
+        Immatriculation au Registre national des entreprises : 5 octobre 2026.
       </p>
-      <p>{"Directrice de la publication : Maryem Hadj Wannes."}</p>
-      <h2>{"Hébergement"}</h2>
       <p>
-        {"\n      GitHub Pages — GitHub, Inc."}
+        Contact : <a href="mailto:contact@codiva.fr">contact@codiva.fr</a>
+      </p>
+      <h2>Hébergement</h2>
+      <p>
+        GitHub Pages — GitHub, Inc.
         <br />
-        {
-          "\n      88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis"
-        }
+        88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.
         <br />
-        <a href="https://github.com" target="_blank" rel="noopener">
-          {"github.com"}
+        <a href="https://github.com" rel="noopener" target="_blank">
+          github.com
         </a>
       </p>
-      <h2>{"Propriété intellectuelle"}</h2>
+      <h2>Propriété intellectuelle</h2>
       <p>
-        {
-          "L'ensemble des contenus de ce site (textes, visuels, logo, code) est la propriété de Maryem Hadj Wannes EI, sauf mention contraire. Toute reproduction sans autorisation préalable est interdite."
-        }
+        Les contenus et éléments de marque du site Codiva sont protégés par le
+        droit de la propriété intellectuelle. Toute reproduction sans
+        autorisation préalable est interdite, sauf mentions ou licences
+        contraires.
       </p>
-      <h2>{"Données personnelles"}</h2>
+      <h2>Données personnelles</h2>
       <p>
-        {
-          "Les informations transmises via le formulaire de contact (nom, email, description du projet) sont utilisées uniquement pour répondre à votre demande. Elles ne sont ni vendues ni cédées à des tiers et sont conservées au maximum 3 ans après le dernier échange."
-        }
+        Le formulaire prépare un email dans votre messagerie. Le site ne
+        transmet pas le formulaire à un serveur de collecte. Les informations
+        que vous choisissez ensuite d’envoyer par email servent à répondre à
+        votre demande et à suivre les échanges relatifs à votre projet.
       </p>
       <p>
-        {
-          "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour l'exercer, écrivez à "
-        }
-        <a href="mailto:contact@codiva.fr" data-config="email">
-          {"contact@codiva.fr"}
-        </a>
-        {". Vous pouvez également introduire une réclamation auprès de la "}
+        Pour exercer vos droits d’accès, de rectification ou de suppression,
+        contactez <a href="mailto:contact@codiva.fr">contact@codiva.fr</a>. Vous
+        pouvez également adresser une réclamation à la{" "}
         <a href="https://www.cnil.fr" target="_blank" rel="noopener">
-          {"CNIL"}
+          CNIL
         </a>
-        {"."}
+        .
       </p>
-      <h2>{"Cookies"}</h2>
+      <h2>Cookies et préférences</h2>
       <p>
-        {
-          "Ce site n'utilise aucun cookie de suivi ni outil de mesure d'audience. Seule votre préférence de thème est enregistrée localement dans votre navigateur."
-        }
+        Aucun cookie publicitaire ni outil de suivi d’audience n’est ajouté par
+        ce site. Votre préférence de thème est conservée localement dans votre
+        navigateur.
       </p>
     </main>
   );

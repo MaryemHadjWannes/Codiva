@@ -1,14 +1,23 @@
 import { notFound } from "next/navigation";
-import { services, type ServiceSlug } from "../../../../lib/services";
-import { metadata } from "../../../../lib/site";
+import { services } from "../../../../lib/services";
+import {
+  metadata,
+  serviceSegment,
+  serviceFromSegment,
+  serviceRoute,
+  type ServiceSlug,
+} from "../../../../lib/site";
 import { ServicePage } from "../../../../components/ServicePage";
 export const dynamicParams = false;
 export const generateStaticParams = () =>
-  Object.keys(services).map((slug) => ({ slug }));
+  (Object.keys(services) as ServiceSlug[]).map((key) => ({
+    slug: serviceSegment(key, "en"),
+  }));
 async function getSlug(params: Promise<{ slug: string }>) {
   const { slug } = await params;
-  if (!Object.hasOwn(services, slug)) notFound();
-  return slug as ServiceSlug;
+  const key = serviceFromSegment(slug, "en");
+  if (!key) notFound();
+  return key;
 }
 export async function generateMetadata({
   params,
@@ -16,13 +25,13 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const slug = await getSlug(params);
-  const item = services[slug]["fr"];
+  const item = services[slug]["en"];
   return metadata(
-    "fr",
+    "en",
     item.title + " | Codiva",
     item.description,
-    `/services/${slug}/`,
-    `/en/services/${slug}/`,
+    serviceRoute(slug, "fr"),
+    serviceRoute(slug, "en"),
   );
 }
 export default async function Page({
@@ -30,5 +39,5 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  return <ServicePage slug={await getSlug(params)} lang="fr" />;
+  return <ServicePage slug={await getSlug(params)} lang="en" />;
 }
