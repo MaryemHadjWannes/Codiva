@@ -1,50 +1,42 @@
-# Codiva — Portfolio
+# Codiva — Next.js
 
-Site vitrine de **Codiva**, l'entreprise individuelle de **Maryem Hadj Wannes**, développeuse fullstack freelance.
+Site de Maryem Hadj Wannes, développeuse full-stack freelance. Next.js App Router, React et TypeScript strict. Le design navy / gold d’origine est conservé. Les pages sont prégénérées et exportées dans `out/` ; aucun serveur applicatif ni base de données n’est nécessaire en production.
 
-> Codiva développe des applications web, des logiciels et des solutions blockchain, de l'analyse du besoin jusqu'à la mise en ligne.
+## Développement
 
-Site statique (HTML / CSS / JavaScript, sans framework ni build) : bilingue FR/EN, thème clair/sombre, responsive, formulaire de contact.
-
-## Structure
-
-```
-index.html              Page principale (services, méthode, compétences, projets, à propos, contact)
-mentions-legales.html   Mentions légales (obligatoires pour une EI)
-assets/css/style.css    Styles
-assets/js/config.js     ← Vos infos : email, LinkedIn, formulaire
-assets/js/main.js       Traductions, thème, menu, formulaire
-assets/                 Favicons, icônes et image de partage (og-image.png)
-brand/                  Kit logo complet (SVG, PNG, LinkedIn, réseaux sociaux)
-```
-
-## Charte graphique
-
-Concept : « Du code qui avance » — un C ouvert et un chevron doré, comme une invite de commande.
-Navy `#0F2A47` · Gold `#E9A23B` (`#F2B04A` sur fond sombre) · Cream `#F4F3EF` · Night `#0B1624` · Gris `#5B6B7C` — police unique Poppins.
-Le doré reste un accent (10 % max, jamais en texte courant). Charte complète : `brand/codiva-brand-guidelines.pdf`.
-
-Le kit est dans `brand/` : logos (`logo/`), favicons, LinkedIn (profil, bannières, posts de lancement FR/EN dans `social/`), carte de visite (`print/`).
-
-## À personnaliser
-
-1. **`assets/js/config.js`** : email pro, URL LinkedIn, et l'adresse du formulaire.
-2. **Formulaire de contact** : créez un formulaire gratuit sur [formspree.io](https://formspree.io), puis collez son URL dans `formEndpoint`. Tant qu'il est vide, le formulaire ouvre la messagerie du visiteur avec le message pré-rempli.
-3. **`mentions-legales.html`** : remplacez les `[À COMPLÉTER]` (SIREN, SIRET, adresse).
-4. **Photo (optionnelle)** : ajoutez `assets/photo.jpg` et décommentez la ligne `about-photo` dans la section « À propos ».
-5. **Projets** : un modèle de carte projet est en commentaire dans la section `#projects`.
-6. **Compétences** : ajustez les listes de la section `#stack`.
-
-## Voir le site en local
+Node.js 24 et npm. Utiliser le checkout existant ; les tâches cloud sont déjà isolées, sans worktree supplémentaire.
 
 ```bash
-python3 -m http.server 8000
-# puis ouvrir http://localhost:8000
+npm ci
+npm run dev
 ```
 
-## Mise en ligne (GitHub Pages, gratuit)
+Par défaut, le site est monté sous `/Codiva`, comme sur GitHub Pages. Pour un domaine à la racine, définir `NEXT_PUBLIC_SITE_URL` dans `.env.local` avant de lancer Next.js.
 
-1. Fusionnez sur la branche `main`.
-2. Sur GitHub : **Settings → Pages → Source : GitHub Actions**.
-3. Le workflow `.github/workflows/deploy.yml` publie le site à chaque push sur `main`, à l'adresse `https://maryemhadjwannes.github.io/Codiva/`.
-4. Nom de domaine perso (ex. `codiva.fr`) : **Settings → Pages → Custom domain**.
+```bash
+npm run build
+npm test
+npm run typecheck
+npm start
+```
+
+`npm start` lance un aperçu local de `out/` sur le port 3000, avec le même chemin de base que le déploiement. Ce serveur sert uniquement à vérifier l’export. Les modifications des variables d’environnement nécessitent une reconstruction. Les processus ne sont pas conservés lors du démarrage d’une nouvelle tâche.
+
+## Pages et contenu
+
+- `/` : accueil français ; `/en/` : accueil anglais, tous deux rendus avant JavaScript.
+- `/services/developpement-web/`, `/services/logiciels-sur-mesure/`, `/services/blockchain/` et équivalents sous `/en/`.
+- `/mentions-legales/` : mentions et confidentialité en français, `noindex,follow`. L’ancienne URL `.html` redirige côté navigateur.
+- `/sitemap.xml` et `/robots.txt` : générés par Next.js.
+
+Les textes sont dans `lib/translations.ts` et `lib/services.ts`. L’identité, les URL et les métadonnées sont dans `lib/site.ts`. Les visuels sont dans `public/assets/` ; le kit de marque reste dans `brand/`.
+
+Le formulaire prépare un email dans la messagerie du visiteur et ne prétend pas envoyer un message côté serveur. Aucun envoi réel n’est nécessaire pour tester les champs. Aucun script publicitaire, cookie de suivi ou outil analytique n’est ajouté.
+
+## Déploiement et référencement
+
+Le workflow GitHub Actions construit, teste et déploie **uniquement `out/`** sur GitHub Pages après un push sur la branche par défaut du dépôt (actuellement `claude/ei-freelance-website-form-9sfcx5`), ou un lancement manuel du workflow. Les autres branches et les pull requests construisent et testent sans déployer. Activer Settings → Pages → GitHub Actions. Aucun déploiement n’est effectué par la présente modification.
+
+Consulter [le guide SEO](docs/SEO.md) pour le domaine, Search Console, Bing, Semrush et les mesures PageSpeed. La configuration inclut canonical, hreflang FR/EN/x-default, Open Graph, Twitter Cards et données structurées Organization, Person, WebSite, WebPage, Service et BreadcrumbList.
+
+Avant publication : compléter les mentions légales (SIREN, SIRET, adresse, régime de TVA) et confirmer les informations d’hébergement. Aucun identifiant légal, avis client, prix ou résultat commercial n’est inventé.
