@@ -27,7 +27,9 @@ export function Controls({ lang }: { lang: Lang }) {
         className="text-btn"
         href={local(home(lang === "fr" ? "en" : "fr"))}
         hrefLang={lang === "fr" ? "en" : "fr"}
-        aria-label={lang === "fr" ? "EN — Read in English" : "FR — Lire en français"}
+        aria-label={
+          lang === "fr" ? "EN — Read in English" : "FR — Lire en français"
+        }
       >
         {lang === "fr" ? "EN" : "FR"}
       </a>

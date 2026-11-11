@@ -1,8 +1,15 @@
 import { services, type ServiceSlug } from "../lib/services";
-import { absolute, home, local, type Lang } from "../lib/site";
+import {
+  absolute,
+  home,
+  local,
+  serviceRoute,
+  servicePath,
+  type Lang,
+} from "../lib/site";
 export function ServicePage({ slug, lang }: { slug: ServiceSlug; lang: Lang }) {
   const service = services[slug][lang];
-  const path = `${lang === "en" ? "/en" : ""}/services/${slug}/`;
+  const path = serviceRoute(slug, lang);
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -47,7 +54,7 @@ export function ServicePage({ slug, lang }: { slug: ServiceSlug; lang: Lang }) {
       <header className="container detail-header">
         <a href={local(home(lang))}>Codiva</a>
         <a
-          href={local(`${lang === "fr" ? "/en" : ""}/services/${slug}/`)}
+          href={servicePath(slug, lang === "fr" ? "en" : "fr")}
           hrefLang={lang === "fr" ? "en" : "fr"}
         >
           {lang === "fr" ? "EN" : "FR"}
@@ -73,8 +80,8 @@ export function ServicePage({ slug, lang }: { slug: ServiceSlug; lang: Lang }) {
         </h2>
         <p>
           {lang === "fr"
-            ? "Expliquez votre besoin, vos contraintes et votre calendrier. Maryem Hadj Wannes vous répond sous 48 h avec une première estimation gratuite et sans engagement."
-            : "Tell Maryem Hadj Wannes about your goals, constraints and timeline. Get a free initial estimate within 48 hours, with no commitment."}
+            ? "Expliquez votre besoin, vos contraintes et votre calendrier. Codiva vous répond sous 48 h avec une première estimation gratuite et sans engagement."
+            : "Tell Codiva about your goals, constraints and timeline. Get a free initial estimate within 48 hours, with no commitment."}
         </p>
         <a className="btn btn-gold" href={local(home(lang) + "#contact")}>
           {lang === "fr" ? "Demander un devis" : "Request a quote"}
@@ -86,17 +93,14 @@ export function ServicePage({ slug, lang }: { slug: ServiceSlug; lang: Lang }) {
           {(Object.keys(services) as ServiceSlug[])
             .filter((key) => key !== slug)
             .map((key) => (
-              <a
-                key={key}
-                href={local(`${lang === "en" ? "/en" : ""}/services/${key}/`)}
-              >
+              <a key={key} href={servicePath(key, lang)}>
                 {services[key][lang].title}
               </a>
             ))}
         </nav>
       </main>
       <footer className="container detail-header">
-        © Codiva — Maryem Hadj Wannes EI
+        © Codiva
         <a href={local("/mentions-legales/")}>
           {lang === "fr" ? "Mentions légales" : "Legal notice (French)"}
         </a>

@@ -20,7 +20,7 @@ Aucun compte Google n’est requis par le site ; son propriétaire doit vérifie
 - Méthode recommandée : propriété **Domaine**, avec le TXT DNS fourni par Search Console.
 - Alternative : propriété **Préfixe d’URL** correspondant exactement à l’URL publique. Pour la méthode balise HTML, placer uniquement le jeton de vérification dans la variable GitHub Actions `GOOGLE_SITE_VERIFICATION`, reconstruire et déployer. En local, cette variable peut être définie dans `.env.local`.
 - Soumettre l’URL publique de `sitemap.xml`.
-- Inspecter l’accueil FR, l’accueil EN et une page de service ; contrôler canonical choisie par Google, indexabilité et rendu mobile.
+- Inspecter l’accueil EN (`/`), l’accueil FR (`/fr/`) et une page de service ; contrôler canonical choisie par Google, indexabilité et rendu mobile.
 - Suivre Indexation des pages, Performances et Signaux Web essentiels après collecte de données. Une soumission ne garantit ni indexation ni classement.
 
 Pour Bing Webmaster Tools, utiliser la vérification DNS ou `BING_SITE_VERIFICATION` (jeton `msvalidate.01`), puis soumettre le même sitemap. Aucun accès de compte n’a été configuré ou utilisé pendant cette migration.
@@ -58,3 +58,14 @@ Le dépôt utilise actuellement `claude/ei-freelance-website-form-9sfcx5` comme 
 4. Attendre la réussite du job `deploy`, puis consulter l’URL affichée par le déploiement. Si une protection de l’environnement `github-pages` impose une approbation ou limite les branches, autoriser la branche par défaut dans ses réglages.
 
 L’export contient `out/index.html`, et le workflow téléverse `out/`. Le dossier `out/` ne doit pas être commité : il est généré par le job de build. Si le job échoue, son message d’erreur permet de distinguer un problème de compilation, de permissions Pages ou de protection d’environnement.
+
+
+## Langue principale et identité Codiva
+
+L’anglais est désormais la langue principale à `/`, et le français est à `/fr/`. Les pages de services ont des URL anglaises sous `/services/` et françaises sous `/fr/services/`. Les alternates FR/EN sont réciproques ; `x-default` pointe vers l’anglais. Le sitemap ne contient que les huit pages canoniques. Les anciennes adresses possèdent un fallback HTML avec canonical et `noindex,follow` ; configurer des redirections 301 si un futur hébergeur le permet.
+
+Les titres, descriptions, contenus et données structurées présentent la marque **Codiva**. Aucun profil `Person` ou nom de fondateur n’est ajouté au balisage. Le SIREN, le SIRET et le code APE sont transcrits depuis l’attestation RNE fournie. Le PDF original et l’adresse personnelle ne sont pas dans le dépôt ou l’export.
+
+La localisation est facultative et pilotée par `NEXT_PUBLIC_BUSINESS_CITY`. Utiliser une ville uniquement lorsque le propriétaire choisit de la publier. Ne pas déduire une zone d’intervention ou une adresse d’accueil client du document administratif. Une fois la ville choisie, enrichir les descriptions locales de manière factuelle et envisager une fiche Google Business Profile seulement si l’activité remplit ses conditions d’éligibilité.
+
+La FAQ visible en FR/EN répond aux questions sur le prix, le périmètre, le devis et le suivi ; aucun résultat enrichi FAQ n’est promis. Prioriser les vraies études de cas et des liens pertinents pour progresser dans les résultats de recherche. Le score Lighthouse SEO contrôle des bases techniques et ne prédit pas un classement Google.
