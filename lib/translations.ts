@@ -4,14 +4,14 @@ const en = {
   "nav.process": "Approach",
   "nav.stack": "Tools",
   "nav.about": "About",
-  "nav.contact": "Contact Codiva",
-  "hero.prompt": "Codiva · web · software · blockchain",
-  "hero.title1": "Web development.",
-  "hero.title2": "Built around you.",
+  "nav.contact": "Let's talk",
+  "hero.prompt": "WEB · SOFTWARE · BLOCKCHAIN",
+  "hero.title1": "Digital ideas.",
+  "hero.title2": "Built to work.",
   "hero.lead":
-    "Codiva builds fast websites, web applications, custom software and blockchain solutions for businesses and entrepreneurs. One technical partner, from your first brief to launch and ongoing support.",
+    "Websites, applications and custom software built around your business. From the first brief to launch.",
   "hero.cta1": "Start a project",
-  "hero.cta2": "See the approach",
+  "hero.cta2": "Explore our services",
   "meta.status.k": "Status",
   "meta.status.v": "Available",
   "meta.reply.k": "Reply",
@@ -20,14 +20,14 @@ const en = {
   "meta.quote.v": "Free",
   "meta.lang.k": "Languages",
   "services.title": "Web, software and blockchain services",
-  "services.web.title": "Web applications",
+  "services.web.title": "Web experiences",
   "services.web.text":
-    "Fast, polished interfaces designed around your users and easy to evolve.",
+    "Thoughtful, high-performance websites and web applications that serve your goals.",
   "services.web.items":
     "Showcase sites · SaaS platforms · Dashboards · E-commerce",
   "services.software.title": "Custom software",
   "services.software.text":
-    "Tools that fit the way you work, instead of bending your work to generic software.",
+    "Tailored applications and digital tools that fit your processes, not the other way around.",
   "services.software.items":
     "Business tools · APIs · Automation · Integrations",
   "services.blockchain.title": "Blockchain solutions",
@@ -35,23 +35,19 @@ const en = {
     "Secure smart contracts and decentralized applications, from prototype to production.",
   "services.blockchain.items":
     "Smart contracts · dApps · Tokens · Web3 integration",
-  "process.title": "From need to launch",
+  "process.title": "A clear path forward.",
   "process.s1.cmd": "analysis",
   "process.s2.cmd": "design",
   "process.s3.cmd": "development",
   "process.s4.cmd": "go-live",
   "process.s1.title": "Understand",
-  "process.s1.text":
-    "We discuss goals, users and constraints. You leave with a clear, free quote.",
+  "process.s1.text": "Get clear on your goals, needs and context.",
   "process.s2.title": "Design",
-  "process.s2.text":
-    "Architecture, mockups, technical choices: tailored to your project and budget.",
+  "process.s2.text": "Shape the right solution and a focused plan.",
   "process.s3.title": "Build",
-  "process.s3.text":
-    "Regular deliveries: you watch the project move forward and approve each step.",
-  "process.s4.title": "Ship & support",
-  "process.s4.text":
-    "Testing, deployment and maintenance, for a solution that stays reliable over time.",
+  "process.s3.text": "Turn the plan into a reliable, high-quality product.",
+  "process.s4.title": "Launch",
+  "process.s4.text": "Go live and set you up for what’s next.",
   "stack.title": "Technologies",
   "stack.tools": "Data & DevOps",
   "projects.title": "Work",
@@ -102,14 +98,14 @@ const fr: Record<keyof typeof en, string> = {
   "nav.process": "Approche",
   "nav.stack": "Outils",
   "nav.about": "À propos",
-  "nav.contact": "Contacter Codiva",
-  "hero.prompt": "Codiva · web · logiciels · blockchain",
-  "hero.title1": "Développement web.",
-  "hero.title2": "Sur mesure.",
+  "nav.contact": "Parlons-en",
+  "hero.prompt": "WEB · LOGICIELS · BLOCKCHAIN",
+  "hero.title1": "Des idées numériques.",
+  "hero.title2": "Conçues pour durer.",
   "hero.lead":
-    "Codiva conçoit des sites internet performants, des applications web, des logiciels sur mesure et des solutions blockchain pour les entreprises et les entrepreneurs. Un partenaire technique, du premier échange à la mise en ligne et au suivi.",
+    "Sites web, applications et logiciels sur mesure, pensés pour votre activité. Du premier échange au lancement.",
   "hero.cta1": "Démarrer un projet",
-  "hero.cta2": "Voir l'approche",
+  "hero.cta2": "Explorer nos services",
   "meta.status.k": "Statut",
   "meta.status.v": "Disponible",
   "meta.reply.k": "Réponse",
@@ -133,7 +129,7 @@ const fr: Record<keyof typeof en, string> = {
     "Des contrats intelligents sécurisés et des applications décentralisées, du prototype à la production.",
   "services.blockchain.items":
     "Smart contracts · dApps · Tokens · Intégration Web3",
-  "process.title": "Du besoin à la mise en ligne",
+  "process.title": "Un chemin clair pour avancer.",
   "process.s1.cmd": "analyse",
   "process.s1.title": "Comprendre",
   "process.s1.text":
@@ -147,7 +143,7 @@ const fr: Record<keyof typeof en, string> = {
   "process.s3.text":
     "Des livraisons régulières : vous voyez le projet avancer et validez chaque étape.",
   "process.s4.cmd": "mise-en-ligne",
-  "process.s4.title": "Livrer & suivre",
+  "process.s4.title": "Lancer",
   "process.s4.text":
     "Tests, déploiement et maintenance, pour une solution qui reste fiable dans le temps.",
   "stack.title": "Technologies",

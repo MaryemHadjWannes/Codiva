@@ -1,4 +1,12 @@
+import localFont from "next/font/local";
 import { local, type Lang } from "../lib/site";
+
+const handwriting = localFont({
+  src: "../app/fonts/Caveat.ttf",
+  variable: "--handwriting",
+  display: "swap",
+});
+
 export function Document({
   lang,
   children,
@@ -7,7 +15,12 @@ export function Document({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html
+      lang={lang}
+      data-theme="dark"
+      className={handwriting.variable}
+      suppressHydrationWarning
+    >
       <head>
         <link
           rel="icon"
