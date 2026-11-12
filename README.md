@@ -35,7 +35,7 @@ Le formulaire prépare un email dans la messagerie du visiteur et ne prétend pa
 
 ## Déploiement et référencement
 
-Le workflow GitHub Actions construit, teste et déploie **uniquement `out/`** sur GitHub Pages après un push sur la branche par défaut du dépôt (actuellement `claude/ei-freelance-website-form-9sfcx5`), ou un lancement manuel du workflow. Les autres branches et les pull requests construisent et testent sans déployer. Activer Settings → Pages → GitHub Actions. Aucun déploiement n’est effectué par la présente modification.
+Le workflow GitHub Actions construit, teste et déploie **uniquement `out/`** sur GitHub Pages après un push sur la branche par défaut du dépôt, ou un lancement manuel du workflow. Les autres branches et les pull requests construisent et testent sans déployer. Activer Settings → Pages → GitHub Actions. Aucun déploiement n’est effectué par la présente modification.
 
 Consulter [le guide SEO](docs/SEO.md) pour le domaine, Search Console, Bing, Semrush et les mesures PageSpeed. La configuration inclut canonical, hreflang FR/EN/x-default, Open Graph, Twitter Cards et données structurées Organization, WebSite, WebPage, Service et BreadcrumbList.
 
