@@ -8,22 +8,21 @@ import { translations } from "../lib/translations";
 
 function Brand() {
   return (
-    <span className="wordmark">
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path
-          d="M33 9a19 19 0 1 0 0 30"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3.5"
-        />
-        <path
-          d="m39 17 7 7-7 7"
-          fill="none"
-          stroke="var(--gold)"
-          strokeWidth="3.5"
-        />
-      </svg>
-      codiva
+    <span className="official-brand" aria-hidden="true">
+      <img
+        className="brand-on-dark"
+        src={local("/assets/codiva-logo-horizontal-dark.svg")}
+        alt=""
+        width={528}
+        height={170}
+      />
+      <img
+        className="brand-on-light"
+        src={local("/assets/codiva-logo-horizontal-light.svg")}
+        alt=""
+        width={528}
+        height={170}
+      />
     </span>
   );
 }

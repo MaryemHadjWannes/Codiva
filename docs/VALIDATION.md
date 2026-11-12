@@ -6,8 +6,12 @@
 - Anglais et thème sombre par défaut, y compris avec un système configuré en clair. Le choix de thème explicite reste mémorisé.
 - `npm run build`, les 13 tests existants et `npm run typecheck` : réussis.
 - Chromium / Playwright sur l’export : pages EN et FR aux largeurs 320, 390, 768, 820, 946 et 1440 px, sans débordement horizontal. Vérification du thème après rechargement, menu mobile, FAQ, validation des trois champs obligatoires et navigation vers une page de service : réussie. Aucune erreur JavaScript de page.
-- Captures ordinateur et mobile relues. Mentions légales conservées ; aucun nouveau PDF n’a été fourni pour vérification. La recherche web évoquée reste à préciser.
+- Captures ordinateur et mobile relues. Mentions légales conservées ; aucun nouveau document légal n’a été fourni pour vérification. La recherche web évoquée reste à préciser.
 - Les scores Lighthouse ci-dessous concernent la version précédente ; ils n’ont pas été remesurés pour cette direction visuelle.
+
+### Correction du logo
+
+La charte graphique fournie a été relue : le logo horizontal officiel remplace le symbole redessiné et le nom composé en police système, en en-tête et en pied de page. Les deux SVG publiés sont identiques aux fichiers du kit de marque (`cmp`), sans modification des tracés, couleurs, proportions ou espacement interne. Les versions pour fond sombre et clair ont été vérifiées dans Chromium ; le thème du site sélectionne la bonne version. Les contrôles navigateur EN/FR aux six largeurs et les commandes de validation ci-dessus passent après cette correction.
 
 ## Version précédente
 
