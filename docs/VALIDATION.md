@@ -1,5 +1,16 @@
 # Validation de la version Codiva
 
+## Direction visuelle — 12 novembre 2026
+
+- Accueil inspiré de la maquette : bleu nuit, accents manuscrits dorés et illustrations géométriques SVG. Police Caveat servie localement, sous licence OFL incluse ; aucune requête Google Fonts au chargement.
+- Anglais et thème sombre par défaut, y compris avec un système configuré en clair. Le choix de thème explicite reste mémorisé.
+- `npm run build`, les 13 tests existants et `npm run typecheck` : réussis.
+- Chromium / Playwright sur l’export : pages EN et FR aux largeurs 320, 390, 768, 820, 946 et 1440 px, sans débordement horizontal. Vérification du thème après rechargement, menu mobile, FAQ, validation des trois champs obligatoires et navigation vers une page de service : réussie. Aucune erreur JavaScript de page.
+- Captures ordinateur et mobile relues. Mentions légales conservées ; aucun nouveau PDF n’a été fourni pour vérification. La recherche web évoquée reste à préciser.
+- Les scores Lighthouse ci-dessous concernent la version précédente ; ils n’ont pas été remesurés pour cette direction visuelle.
+
+## Version précédente
+
 Vérifications locales le 11 novembre 2026 sur l’export de production Next.js, sous le chemin GitHub Pages `/Codiva/`.
 
 - L’anglais est principal à `/` ; le français est à `/fr/`.
