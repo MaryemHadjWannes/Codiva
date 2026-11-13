@@ -76,3 +76,9 @@ La FAQ visible en FR/EN répond aux questions sur le prix, le périmètre, le de
 - Accueil : `Organization` (contactPoint, offres, langues), `WebSite`, `WebPage` et `FAQPage` correspondant aux questions visibles. Services : `Service` rattaché à l’organisation + `BreadcrumbList`.
 - Les identifiants d’enregistrement (SIREN/SIRET/APE) figurent uniquement sur la page de mentions légales (`noindex`), jamais dans le pied de page ni dans le balisage.
 - Une page `404` est générée pour l’hébergement statique ; `robots` autorise les grands aperçus d’images.
+
+## 6. Déploiement Cloudflare (Workers Builds)
+
+- Branche de production : `main`. Commande de build : `npm run build`. Commande de déploiement : `npx wrangler deploy` (configuration dans `wrangler.jsonc`, dossier servi : `out`).
+- Variables de build : `NEXT_PUBLIC_SITE_URL=https://codiva.eu` et `NODE_VERSION=22`. L’URL doit correspondre au domaine public pour que canonical, hreflang et sitemap soient corrects.
+- Les branches autres que `main` utilisent la configuration « Previews » (`npx wrangler preview`), qui requiert le bloc `previews` déjà présent dans `wrangler.jsonc`.
