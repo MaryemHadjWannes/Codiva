@@ -64,7 +64,7 @@ L’export contient `out/index.html`, et le workflow téléverse `out/`. Le doss
 
 L’anglais est désormais la langue principale à `/`, et le français est à `/fr/`. Les pages de services ont des URL anglaises sous `/services/` et françaises sous `/fr/services/`. Les alternates FR/EN sont réciproques ; `x-default` pointe vers l’anglais. Le sitemap ne contient que les huit pages canoniques. Les anciennes adresses possèdent un fallback HTML avec canonical et `noindex,follow` ; configurer des redirections 301 si un futur hébergeur le permet.
 
-Les titres, descriptions, contenus et données structurées présentent la marque **Codiva**. Aucun profil `Person` ou nom de fondateur n’est ajouté au balisage. Le SIREN, le SIRET et le code APE sont transcrits depuis l’attestation RNE fournie. Le PDF original et l’adresse personnelle ne sont pas dans le dépôt ou l’export.
+Les titres, descriptions, contenus et données structurées présentent la marque **Codiva**. Aucun profil `Person` ou nom de fondateur n’est ajouté au balisage. Le PDF original et l’adresse personnelle ne sont pas dans le dépôt ou l’export.
 
 La localisation est facultative et pilotée par `NEXT_PUBLIC_BUSINESS_CITY`. Utiliser une ville uniquement lorsque le propriétaire choisit de la publier. Ne pas déduire une zone d’intervention ou une adresse d’accueil client du document administratif. Une fois la ville choisie, enrichir les descriptions locales de manière factuelle et envisager une fiche Google Business Profile seulement si l’activité remplit ses conditions d’éligibilité.
 

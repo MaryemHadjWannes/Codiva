@@ -6,12 +6,8 @@ export const organization = {
   name: business.name,
   url: absolute("/"),
   logo: absolute("/assets/icon-512.png"),
-  email: "contact@codiva.fr",
+  email: business.email,
   sameAs: [linkedin],
-  identifier: [
-    { "@type": "PropertyValue", propertyID: "SIREN", value: business.siren },
-    { "@type": "PropertyValue", propertyID: "SIRET", value: business.siret },
-  ],
   ...(business.city
     ? {
         address: {

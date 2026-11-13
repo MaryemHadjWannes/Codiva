@@ -3,6 +3,7 @@ import { ContactForm } from "./ContactForm";
 import { Geometry } from "./Geometry";
 import { local, servicePath, type Lang } from "../lib/site";
 import { business } from "../lib/business";
+import { Dynamic } from "./Dynamic";
 import { Faq } from "./Faq";
 import { translations } from "../lib/translations";
 
@@ -36,6 +37,7 @@ export function Home({ lang }: { lang: Lang }) {
   ] as const;
   return (
     <div className="studio">
+      <Dynamic />
       <a className="skip-link" href="#main">
         {t.skip}
       </a>
@@ -93,6 +95,26 @@ export function Home({ lang }: { lang: Lang }) {
             <li>{fr ? "Pensé pour évoluer" : "Built to evolve"}</li>
           </ul>
         </section>
+        <section className="figures container" aria-label={fr ? "Chiffres clés" : "Key figures"} data-reveal>
+          <ul>
+            <li>
+              <strong><span data-count="48">48</span> h</strong>
+              <span>{fr ? "pour recevoir une réponse" : "to get a reply"}</span>
+            </li>
+            <li>
+              <strong><span data-count="3">3</span></strong>
+              <span>{fr ? "domaines d’expertise" : "areas of expertise"}</span>
+            </li>
+            <li>
+              <strong><span data-count="4">4</span></strong>
+              <span>{fr ? "étapes, de l’idée au lancement" : "steps, from idea to launch"}</span>
+            </li>
+            <li>
+              <strong><span data-count="100">100</span> %</strong>
+              <span>{fr ? "d’attention dédiée à votre projet" : "dedicated attention to your project"}</span>
+            </li>
+          </ul>
+        </section>
         <section
           className="studio-services container"
           id="services"
@@ -109,7 +131,7 @@ export function Home({ lang }: { lang: Lang }) {
           </h2>
           <div className="service-grid">
             {services.map(({ key, slug, art }) => (
-              <article className="studio-service" key={key}>
+              <article className="studio-service" key={key} data-reveal>
                 <Geometry kind={art} />
                 <h3>
                   <a href={servicePath(slug, lang)}>
@@ -142,7 +164,7 @@ export function Home({ lang }: { lang: Lang }) {
             </div>
             <ol className="journey">
               {([1, 2, 3, 4] as const).map((n) => (
-                <li key={n}>
+                <li key={n} data-reveal>
                   <span className="journey-dot" aria-hidden="true" />
                   <h3>{t[`process.s${n}.title`]}</h3>
                   <p>{t[`process.s${n}.text`]}</p>
@@ -151,7 +173,7 @@ export function Home({ lang }: { lang: Lang }) {
             </ol>
           </div>
         </section>
-        <section className="section studio-about" id="apropos">
+        <section className="section studio-about" id="apropos" data-reveal>
           <div className="container split">
             <header className="split-label">
               <p className="eyebrow">02 / {t["about.title"]}</p>
@@ -190,7 +212,7 @@ export function Home({ lang }: { lang: Lang }) {
               )}
               <ul className="contact-links">
                 <li>
-                  <a href="mailto:contact@codiva.fr">contact@codiva.fr</a>
+                  <a href={`mailto:${business.email}`}>{business.email}</a>
                 </li>
                 <li>
                   <a
@@ -219,7 +241,7 @@ export function Home({ lang }: { lang: Lang }) {
               : "Let's build something useful."}
           </p>
           <p className="footer-legal">
-            © {new Date().getFullYear()} Codiva · SIRET {business.siret} ·{" "}
+            © {new Date().getFullYear()} Codiva ·{" "}
             <a href={local("/mentions-legales/")}>{t["footer.legal"]}</a>
           </p>
         </div>

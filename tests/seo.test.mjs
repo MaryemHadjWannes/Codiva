@@ -61,25 +61,20 @@ test("Codiva organization identifies the business without a personal profile or 
   const graph = schemas(html).flatMap((schema) => schema["@graph"] || []);
   const org = graph.find((item) => item["@type"] === "Organization");
   assert.equal(org.name, "Codiva");
-  assert.equal(
-    org.identifier.find((item) => item.propertyID === "SIRET").value,
-    "13106891800013",
-  );
-  assert.equal(
-    org.identifier.find((item) => item.propertyID === "SIREN").value,
-    "131068918",
-  );
+  assert.ok(!org.identifier);
+  assert.equal(org.email, "Maryem.hadjwannes@codiva.eu");
   assert.ok(org.sameAs.includes("https://www.linkedin.com/company/codiva-fr/"));
   assert.ok(!graph.some((item) => item["@type"] === "Person"));
   assert.ok(!org.founder && !org.legalName);
   if (!process.env.NEXT_PUBLIC_BUSINESS_CITY) assert.ok(!org.address);
   assert.match(html, /<meta name="author" content="Codiva"/);
 });
-test("business identifiers present on legal page; page excluded from index", async () => {
+test("legal page is excluded from index and exposes no private identifiers", async () => {
   const html = await readFile("out/mentions-legales/index.html", "utf8");
   assert.match(html, /name="robots" content="noindex, follow"/);
   for (const value of ["13106891800013", "131068918", "6201Z"])
-    assert.ok(html.includes(value));
+    assert.ok(!html.includes(value));
+  assert.ok(html.includes("Maryem.hadjwannes@codiva.eu"));
   assert.doesNotMatch(
     html,
     /À COMPLÉTER|Directrice de la publication|TVA non applicable/,

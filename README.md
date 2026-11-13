@@ -39,7 +39,7 @@ Le workflow GitHub Actions construit, teste et déploie **uniquement `out/`** su
 
 Consulter [le guide SEO](docs/SEO.md) pour le domaine, Search Console, Bing, Semrush et les mesures PageSpeed. La configuration inclut canonical, hreflang FR/EN/x-default, Open Graph, Twitter Cards et données structurées Organization, WebSite, WebPage, Service et BreadcrumbList.
 
-Les identifiants SIREN/SIRET et le code APE proviennent de l’attestation RNE fournie par le propriétaire. Le PDF et l’adresse personnelle ne sont pas publiés. Le site présente uniquement la marque Codiva. Les mentions légales d’une entreprise individuelle restent à faire valider : le retrait du nom personnel et l’absence d’adresse ne permettent pas de les considérer comme complètes. Aucun régime de TVA non confirmé n’est affiché.
+Le PDF et l’adresse personnelle ne sont pas publiés. Le site présente uniquement la marque Codiva. Les mentions légales d’une entreprise individuelle restent à faire valider : le retrait du nom personnel et l’absence d’adresse ne permettent pas de les considérer comme complètes. Aucun régime de TVA non confirmé n’est affiché.
 
 
 ## Localisation publique

@@ -1,10 +1,8 @@
-// Public business identifiers transcribed from the owner's RNE attestation.
-// The source PDF and personal address must never be copied to public/.
+// Public brand details only. Administrative identifiers and personal data
+// (registration numbers, addresses, source documents) must never be published.
 export const business = {
   name: "Codiva",
-  siren: "131068918",
-  siret: "13106891800013",
-  ape: "6201Z",
+  email: "Maryem.hadjwannes@codiva.eu",
   city: (process.env.NEXT_PUBLIC_BUSINESS_CITY || "").trim(),
   country: "FR",
 };

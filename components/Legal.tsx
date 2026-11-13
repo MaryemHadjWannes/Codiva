@@ -9,18 +9,10 @@ export function Legal() {
       <p>
         Nom commercial : <strong>Codiva</strong>
         <br />
-        Forme juridique : entrepreneur individuel
-        <br />
-        SIREN : {business.siren}
-        <br />
-        SIRET : {business.siret}
-        <br />
-        Code APE : {business.ape} — Programmation informatique
-        <br />
-        Immatriculation au Registre national des entreprises : 5 octobre 2026.
+        Activité : développement web, logiciels sur mesure et blockchain.
       </p>
       <p>
-        Contact : <a href="mailto:contact@codiva.fr">contact@codiva.fr</a>
+        Contact : <a href={`mailto:${business.email}`}>{business.email}</a>
       </p>
       <h2>Hébergement</h2>
       <p>
@@ -48,7 +40,7 @@ export function Legal() {
       </p>
       <p>
         Pour exercer vos droits d’accès, de rectification ou de suppression,
-        contactez <a href="mailto:contact@codiva.fr">contact@codiva.fr</a>. Vous
+        contactez <a href={`mailto:${business.email}`}>{business.email}</a>. Vous
         pouvez également adresser une réclamation à la{" "}
         <a href="https://www.cnil.fr" target="_blank" rel="noopener">
           CNIL

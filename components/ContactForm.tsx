@@ -1,6 +1,7 @@
 "use client";
 import { useState, type FormEvent } from "react";
 import type { Lang } from "../lib/site";
+import { business } from "../lib/business";
 import { translations } from "../lib/translations";
 export function ContactForm({ lang }: { lang: Lang }) {
   const t = translations[lang];
@@ -28,7 +29,7 @@ export function ContactForm({ lang }: { lang: Lang }) {
       return;
     }
     const body = `Nom : ${data.get("name")}\nEmail : ${data.get("email")}\nProjet : ${data.get("type")}\nBudget : ${data.get("budget")}\n\n${data.get("message")}`;
-    window.location.href = `mailto:contact@codiva.fr?subject=${encodeURIComponent("Projet Codiva — " + data.get("name"))}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${business.email}?subject=${encodeURIComponent("Projet Codiva — " + data.get("name"))}&body=${encodeURIComponent(body)}`;
     setStatus(
       lang === "fr"
         ? "Votre messagerie va s’ouvrir avec votre message prérempli. L’envoi se fait depuis votre messagerie."

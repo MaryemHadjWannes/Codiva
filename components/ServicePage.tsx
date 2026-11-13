@@ -1,3 +1,4 @@
+import { business } from "../lib/business";
 import { services, type ServiceSlug } from "../lib/services";
 import {
   absolute,
@@ -100,7 +101,7 @@ export function ServicePage({ slug, lang }: { slug: ServiceSlug; lang: Lang }) {
         </nav>
       </main>
       <footer className="container detail-header">
-        © Codiva
+        <span>© Codiva · <a href={`mailto:${business.email}`}>{business.email}</a></span>
         <a href={local("/mentions-legales/")}>
           {lang === "fr" ? "Mentions légales" : "Legal notice (French)"}
         </a>
