@@ -1,5 +1,5 @@
 import { home, local } from "../lib/site";
-import { business } from "../lib/business";
+import { business, legalIdentifiers } from "../lib/business";
 export function Legal() {
   return (
     <main className="container legal">
@@ -9,7 +9,15 @@ export function Legal() {
       <p>
         Nom commercial : <strong>Codiva</strong>
         <br />
-        Activité : développement web, logiciels sur mesure et blockchain.
+        Forme juridique : entrepreneur individuel
+        <br />
+        SIREN : {legalIdentifiers.siren}
+        <br />
+        SIRET : {legalIdentifiers.siret}
+        <br />
+        Code APE : {legalIdentifiers.ape} — Programmation informatique
+        <br />
+        Immatriculation au Registre national des entreprises : 5 octobre 2026.
       </p>
       <p>
         Contact : <a href={`mailto:${business.email}`}>{business.email}</a>

@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { absolute, serviceRoute, type ServiceSlug } from "../lib/site";
+import { absolute, careersRoute, serviceRoute, type ServiceSlug } from "../lib/site";
 import { services } from "../lib/services";
 export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const pairs = [
     ["/fr/", "/"],
+    [careersRoute("fr"), careersRoute("en")],
     ...(Object.keys(services) as ServiceSlug[]).map((slug) => [
       serviceRoute(slug, "fr"),
       serviceRoute(slug, "en"),

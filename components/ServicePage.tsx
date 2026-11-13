@@ -2,6 +2,7 @@ import { business } from "../lib/business";
 import { services, type ServiceSlug } from "../lib/services";
 import {
   absolute,
+  careersPath,
   home,
   local,
   serviceRoute,
@@ -21,9 +22,12 @@ export function ServicePage({ slug, lang }: { slug: ServiceSlug; lang: Lang }) {
         url: absolute(path),
         provider: {
           "@type": "Organization",
+          "@id": absolute("/#organization"),
           name: "Codiva",
           url: absolute("/"),
         },
+        inLanguage: lang,
+        areaServed: ["FR", "EU"],
       },
       {
         "@type": "BreadcrumbList",
@@ -102,6 +106,7 @@ export function ServicePage({ slug, lang }: { slug: ServiceSlug; lang: Lang }) {
       </main>
       <footer className="container detail-header">
         <span>© Codiva · <a href={`mailto:${business.email}`}>{business.email}</a></span>
+        <a href={careersPath(lang)}>{lang === "fr" ? "Recrutement" : "Careers"}</a>
         <a href={local("/mentions-legales/")}>
           {lang === "fr" ? "Mentions légales" : "Legal notice (French)"}
         </a>

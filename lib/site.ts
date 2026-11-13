@@ -25,6 +25,9 @@ export const serviceFromSegment = (segment: string, lang: Lang) =>
   (Object.keys(serviceSegments) as ServiceSlug[]).find(
     (key) => serviceSegments[key][lang] === segment,
   );
+export const careersRoute = (lang: Lang) =>
+  lang === "fr" ? "/fr/recrutement/" : "/careers/";
+export const careersPath = (lang: Lang) => local(careersRoute(lang));
 export const linkedin = "https://www.linkedin.com/company/codiva-fr/";
 export function metadata(
   lang: Lang,

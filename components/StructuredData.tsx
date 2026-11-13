@@ -1,4 +1,5 @@
 import { absolute, home, type Lang } from "../lib/site";
+import { faq } from "../lib/faq";
 import { organization } from "../lib/organization";
 export function StructuredData({ lang }: { lang: Lang }) {
   const data = {
@@ -24,6 +25,16 @@ export function StructuredData({ lang }: { lang: Lang }) {
         inLanguage: lang,
         isPartOf: { "@id": absolute("/#website") },
         about: { "@id": absolute("/#organization") },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": absolute(home(lang) + "#faq"),
+        inLanguage: lang,
+        mainEntity: faq[lang].map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
       },
     ],
   };

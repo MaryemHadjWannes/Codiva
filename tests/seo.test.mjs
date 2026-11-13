@@ -7,6 +7,7 @@ const site = (
 ).replace(/\/$/, "");
 const pairs = [
   ["/fr/", "/"],
+  ["/fr/recrutement/", "/careers/"],
   ["/fr/services/developpement-web/", "/services/web-development/"],
   ["/fr/services/logiciels-sur-mesure/", "/services/custom-software/"],
   ["/fr/services/blockchain/", "/services/blockchain-development/"],
@@ -48,7 +49,7 @@ test("sitemap includes only current language routes and English x-default", asyn
   const xml = await readFile("out/sitemap.xml", "utf8");
   for (const path of pages)
     assert.ok(xml.includes(`<loc>${site}${path}</loc>`));
-  assert.equal((xml.match(/<loc>/g) || []).length, 8);
+  assert.equal((xml.match(/<loc>/g) || []).length, 10);
   assert.doesNotMatch(xml, /<loc>[^<]*\/en\//);
   assert.ok(
     (await readFile("out/robots.txt", "utf8")).includes(
@@ -69,11 +70,15 @@ test("Codiva organization identifies the business without a personal profile or 
   if (!process.env.NEXT_PUBLIC_BUSINESS_CITY) assert.ok(!org.address);
   assert.match(html, /<meta name="author" content="Codiva"/);
 });
-test("legal page is excluded from index and exposes no private identifiers", async () => {
+test("legal page is noindex and is the only page showing registration identifiers", async () => {
   const html = await readFile("out/mentions-legales/index.html", "utf8");
   assert.match(html, /name="robots" content="noindex, follow"/);
   for (const value of ["13106891800013", "131068918", "6201Z"])
-    assert.ok(!html.includes(value));
+    assert.ok(html.includes(value));
+  for (const path of pages) {
+    const page = await readFile("out" + path + "index.html", "utf8");
+    assert.ok(!page.includes("13106891800013"));
+  }
   assert.ok(html.includes("Maryem.hadjwannes@codiva.eu"));
   assert.doesNotMatch(
     html,

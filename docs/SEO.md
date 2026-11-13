@@ -69,3 +69,10 @@ Les titres, descriptions, contenus et données structurées présentent la marqu
 La localisation est facultative et pilotée par `NEXT_PUBLIC_BUSINESS_CITY`. Utiliser une ville uniquement lorsque le propriétaire choisit de la publier. Ne pas déduire une zone d’intervention ou une adresse d’accueil client du document administratif. Une fois la ville choisie, enrichir les descriptions locales de manière factuelle et envisager une fiche Google Business Profile seulement si l’activité remplit ses conditions d’éligibilité.
 
 La FAQ visible en FR/EN répond aux questions sur le prix, le périmètre, le devis et le suivi ; aucun résultat enrichi FAQ n’est promis. Prioriser les vraies études de cas et des liens pertinents pour progresser dans les résultats de recherche. Le score Lighthouse SEO contrôle des bases techniques et ne prédit pas un classement Google.
+
+## 5. Pages et données structurées (mise à jour)
+
+- Pages indexables : accueil EN/FR, 3 services EN/FR, page recrutement (`/careers/`, `/fr/recrutement/`) — 10 URL dans le sitemap, hreflang réciproques. Aucune offre `JobPosting` n’est publiée tant qu’aucun poste n’est réellement ouvert ; ajouter ce balisage lors d’un vrai recrutement.
+- Accueil : `Organization` (contactPoint, offres, langues), `WebSite`, `WebPage` et `FAQPage` correspondant aux questions visibles. Services : `Service` rattaché à l’organisation + `BreadcrumbList`.
+- Les identifiants d’enregistrement (SIREN/SIRET/APE) figurent uniquement sur la page de mentions légales (`noindex`), jamais dans le pied de page ni dans le balisage.
+- Une page `404` est générée pour l’hébergement statique ; `robots` autorise les grands aperçus d’images.

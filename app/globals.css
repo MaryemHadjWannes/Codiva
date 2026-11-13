@@ -1910,3 +1910,12 @@ html[lang="fr"] .hero-copy h1 .handwritten {
 html {
   scroll-behavior: smooth;
 }
+.status-pill{display:inline-block;padding:2px 12px;border:1px solid var(--gold);border-radius:999px;color:var(--gold);font-size:.8rem}
+.role-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.role-grid li{padding:20px;border:1px solid var(--line);border-radius:var(--radius);transition:transform .25s,border-color .25s}
+.role-grid li:hover{transform:translateY(-4px);border-color:var(--gold)}
+.role-grid h3{margin:0 0 8px;font-size:1.05rem}.role-grid p{margin:0;color:var(--muted)}
+.rotator{color:var(--gold);display:inline-block;min-width:8ch;transition:opacity .3s,transform .3s}
+.rotator.swap{opacity:0;transform:translateY(8px)}
+.hero-art{transition:transform .2s ease-out}
+.detail .commitments{margin-bottom:32px}

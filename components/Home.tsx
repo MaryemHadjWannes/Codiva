@@ -1,8 +1,9 @@
 import { Controls } from "./Controls";
 import { ContactForm } from "./ContactForm";
 import { Geometry } from "./Geometry";
-import { local, servicePath, type Lang } from "../lib/site";
+import { careersPath, local, servicePath, type Lang } from "../lib/site";
 import { business } from "../lib/business";
+import { Rotator } from "./Rotator";
 import { Dynamic } from "./Dynamic";
 import { Faq } from "./Faq";
 import { translations } from "../lib/translations";
@@ -71,6 +72,16 @@ export function Home({ lang }: { lang: Lang }) {
               <span className="handwritten underline">{t["hero.title2"]}</span>
             </h1>
             <p className="studio-lead">{t["hero.lead"]}</p>
+            <p className="studio-lead" aria-hidden="true">
+              {fr ? "Nous créons " : "We build "}
+              <Rotator
+                words={
+                  fr
+                    ? ["des sites web", "des applications", "des logiciels sur mesure", "des smart contracts"]
+                    : ["websites", "web applications", "custom software", "smart contracts"]
+                }
+              />
+            </p>
             <div className="hero-cta">
               <a href="#contact" className="btn btn-gold">
                 {t["hero.cta1"]}
@@ -242,6 +253,7 @@ export function Home({ lang }: { lang: Lang }) {
           </p>
           <p className="footer-legal">
             © {new Date().getFullYear()} Codiva ·{" "}
+            <a href={careersPath(lang)}>{fr ? "Recrutement" : "Careers"}</a> ·{" "}
             <a href={local("/mentions-legales/")}>{t["footer.legal"]}</a>
           </p>
         </div>

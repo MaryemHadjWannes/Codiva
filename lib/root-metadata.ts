@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 export const metadata: Metadata = {
   authors: [{ name: "Codiva" }],
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
     other: process.env.BING_SITE_VERIFICATION

@@ -73,7 +73,17 @@ export function Dynamic() {
       if (s) spy.observe(s);
     });
 
+    const art = document.querySelector<HTMLElement>(".hero-art");
+    const move = (e: PointerEvent) => {
+      if (!art || e.pointerType !== "mouse") return;
+      const x = (e.clientX / window.innerWidth - 0.5) * 10;
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+      art.style.transform = `translate(${x}px, ${y}px)`;
+    };
+    if (!reduce) window.addEventListener("pointermove", move);
+
     return () => {
+      window.removeEventListener("pointermove", move);
       window.removeEventListener("scroll", onScroll);
       reveal?.disconnect();
       spy.disconnect();
